@@ -1,0 +1,4 @@
+id: "example"
+name: "Example Extension"
+version: "1.0.0"
+description: "This is an example extension."

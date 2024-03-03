@@ -1,0 +1,59 @@
+plugins {
+    id 'java'
+}
+
+group = rootProject.maven_group
+version = rootProject.release_version
+base.archivesName = rootProject.archives_base_name
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    maven {
+        url 'https://jitpack.io'
+    }
+    maven {
+        name = "LocalMavenSnapshot"
+        url = "file:/${project.local_maven_repo}/Snapshot"
+    }
+    mavenLocal()
+    mavenCentral()
+}
+
+configurations {
+}
+
+dependencies {
+    implementation "org.slf4j:slf4j-api:1.7.36"
+    implementation "xyz.mrcraftteammc.grasslauncher:GrassLauncher-Java:1.0.0-SNAPSHOT"
+
+    testImplementation platform('org.junit:junit-bom:5.10.2')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+processResources {
+    inputs.property "version", project.version
+
+    filteringCharset "UTF-8"
+
+    filesMatching("grasslauncher.extension.yml") {
+        expand "version": project.version
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile).configureEach { tsk ->
+    tsk.options.encoding = "UTF-8"
+}
+
+java {
+    withSourcesJar()
+}
+
+jar {
+    zip64 true
+}
