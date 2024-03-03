@@ -13,10 +13,6 @@ repositories {
     maven {
         url 'https://jitpack.io'
     }
-    maven {
-        name = "LocalMavenSnapshot"
-        url = "file:/${project.local_maven_repo}/Snapshot"
-    }
     mavenLocal()
     mavenCentral()
 }
