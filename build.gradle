@@ -13,6 +13,9 @@ repositories {
     maven {
         url 'https://jitpack.io'
     }
+    maven {
+        url 'https://maven.fabricmc.net'
+    }
     mavenLocal()
     mavenCentral()
 }
@@ -22,7 +25,7 @@ configurations {
 
 dependencies {
     implementation "org.slf4j:slf4j-api:1.7.36"
-    implementation "xyz.mrcraftteammc.grasslauncher:GrassLauncher-Java:1.0.0-SNAPSHOT"
+    implementation 'com.github.MrCraftTeamMC:GrassLauncher-Java:1.0.0-SNAPSHOT-8bf732f'
 
     testImplementation platform('org.junit:junit-bom:5.10.2')
     testImplementation 'org.junit.jupiter:junit-jupiter'
