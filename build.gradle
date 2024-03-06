@@ -25,7 +25,9 @@ configurations {
 
 dependencies {
     implementation "org.slf4j:slf4j-api:1.7.36"
-    implementation 'com.github.MrCraftTeamMC:GrassLauncher-Java:1.0.0-SNAPSHOT-8bf732f'
+    implementation "com.fasterxml.jackson.core:jackson-databind:2.16.1"
+    implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.16.1"
+    implementation 'com.github.MrCraftTeamMC:GrassLauncher-Java:1.0.0-SNAPSHOT-89cc64c'
 
     testImplementation platform('org.junit:junit-bom:5.10.2')
     testImplementation 'org.junit.jupiter:junit-jupiter'
